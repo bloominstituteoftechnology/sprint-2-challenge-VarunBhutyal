@@ -32,49 +32,15 @@
       ((y < 1) || (y > 3))) {
           return "invalid coordinates"
       } 
-
-      // for (let i in grid) {
-      //   // console.log(grid[i])
-      //   console.log(i)
-      //   if (i === (x-1)) {
-      //     console.log("is this printing")
-      //     for (k in grid[i]) {
-      //       // console.log(grid[i][k])
-      //       if (k === y) {
-      //         console.log(grid[i][k])
-      //       }
-      //     }
-      //   }
-
-      // }
-
-      // for (loop=0; loop <=grid.length-1; loop++) {
-      //   // console.log(grid[loop])
-      //   let xValue = grid[loop]
-      //   // console.log(xValue)
-      //   if (loop === x) {
-      //     // console.log(loop, x)
-         
-      //       for (i =0; i<=xValue.length-1; i++) {
-      //         if (i === y) {
-      //           console.log(grid[loop][i])
-      //         }
-      //       }
-      //     // console.log(grid[loop][y])
-      //     // return grid[loop][y]
-
-      //   }
-      // }
-
-      // xValue= x-1
-      // yValue= y-1
-      // console.log(grid[xValue][yValue])
-      // resultChl2 = grid[xValue][yValue]
-      // if (resultChl2 === 🟦 blue ) {
-
-      // }
-
-
+      
+      const column = x-1
+      const row = y-1
+      const finalBox = grid[row][column]
+      if (finalBox === "🟥") {
+        return "🟥 💀"
+      } else if (finalBox === "🟦") {
+        return "🟦 🥳"
+      }
 
     }
 
