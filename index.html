@@ -6,21 +6,113 @@
   <script id="challenge">
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
-
+      let objProfile = {
+        active: "",
+        reason: ""
+      }
+      if (profile.active) {
+        if (reason === undefined) {
+          return "confirm status manually"
+        }
+        objProfile.active = false
+        objProfile.reason = reason
+      } else {
+        objProfile.active = true
+        delete objProfile.reason
+      }
+      return objProfile
     }
 
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
 
+      let resultChl2 = ""
+
+      if (((x < 1) || (x > 3)) || 
+      ((y < 1) || (y > 3))) {
+          return "invalid coordinates"
+      } 
+
+      // for (let i in grid) {
+      //   // console.log(grid[i])
+      //   console.log(i)
+      //   if (i === (x-1)) {
+      //     console.log("is this printing")
+      //     for (k in grid[i]) {
+      //       // console.log(grid[i][k])
+      //       if (k === y) {
+      //         console.log(grid[i][k])
+      //       }
+      //     }
+      //   }
+
+      // }
+
+      // for (loop=0; loop <=grid.length-1; loop++) {
+      //   // console.log(grid[loop])
+      //   let xValue = grid[loop]
+      //   // console.log(xValue)
+      //   if (loop === x) {
+      //     // console.log(loop, x)
+         
+      //       for (i =0; i<=xValue.length-1; i++) {
+      //         if (i === y) {
+      //           console.log(grid[loop][i])
+      //         }
+      //       }
+      //     // console.log(grid[loop][y])
+      //     // return grid[loop][y]
+
+      //   }
+      // }
+
+      // xValue= x-1
+      // yValue= y-1
+      // console.log(grid[xValue][yValue])
+      // resultChl2 = grid[xValue][yValue]
+      // if (resultChl2 === 🟦 blue ) {
+
+      // }
+
+
+
     }
 
     // 👉 CHALLENGE 3
     function booleanize(obj) {
-
+      for (let loop3 in obj) {
+        if (loop3.length > 9) {
+          return "shorten all prop names to 9 chars or less"
+        } else if (obj[loop3] === null) {
+          delete obj[loop3]
+        } else if (obj[loop3] === 0) {
+          obj[loop3] = false
+        } else if (obj[loop3] === 1) {
+          obj[loop3] = true
+        } 
+      }
+      return obj
     }
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
+
+    let arrText = text.split(" ")
+    let returnText = ""
+    for (let loop_forb in forbidden) {
+      for (let loop_text in arrText) {
+        let replaceWord = ""
+        if (forbidden[loop_forb] === arrText[loop_text]) {
+          let lengthForbiddenWord = forbidden[loop_forb].length
+          for (let loop_createX=1; loop_createX <= lengthForbiddenWord; loop_createX++) {
+              replaceWord += "x"
+          }
+          arrText[loop_text] = replaceWord
+        }
+      }
+    }
+    returnText=arrText.join(" ")
+    return returnText
 
     }
 
