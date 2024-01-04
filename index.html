@@ -118,7 +118,15 @@
 
     // 👉 CHALLENGE 5 (bonus, NOT graded)
     function normalizePhoneNumber(num) {
-
+      let arrNum = num.split("")
+      let last4= arrNum.slice(6)
+      let last= last4.join("")
+      let mid3= arrNum.slice(3,6)
+      let mid=mid3.join("")
+      let first3=arrNum.slice(0,3)
+      let first= first3.join("")
+      let output = `(${first}) ${mid}-${last}`
+      return output
     }
 
     // 👉 CHALLENGE 6 (bonus, NOT graded)
